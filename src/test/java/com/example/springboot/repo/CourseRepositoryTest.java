@@ -33,10 +33,21 @@ class CourseRepositoryTest {
     }
 
     @Test
+    @Transactional
+    public void findById_firstLevelCacheDemo(){
+        Course course = repository.findById(10003L);
+        logger.info("First Course Retrieved -> {}",course);
+        Course course1 = repository.findById(10003L);
+        logger.info("First Course Retrieved again -> {}",course1);
+        assertEquals("C++ Course", course.getName());
+        assertEquals("C++ Course", course1.getName());
+    }
+
+    @Test
     @DirtiesContext
     public void deleteById_basic(){
-        repository.deleteById(10002L);
-        assertNull(repository.findById(10002L));
+        repository.deleteById(12L);
+        assertNull(repository.findById(12L));
     }
 
     @Test

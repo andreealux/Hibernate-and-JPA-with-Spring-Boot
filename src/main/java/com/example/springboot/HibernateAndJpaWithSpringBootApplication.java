@@ -2,6 +2,7 @@ package com.example.springboot;
 
 import com.example.springboot.entity.*;
 import com.example.springboot.repo.CourseRepository;
+
 import com.example.springboot.repo.EmployeeRepository;
 import com.example.springboot.repo.StudentRepository;
 import org.slf4j.Logger;
@@ -20,6 +21,8 @@ import java.math.BigDecimal;
 public class HibernateAndJpaWithSpringBootApplication implements CommandLineRunner {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
+
+
 
     @Autowired
     CourseRepository courseRepository;

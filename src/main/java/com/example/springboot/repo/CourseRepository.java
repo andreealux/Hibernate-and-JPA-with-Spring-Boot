@@ -2,6 +2,7 @@ package com.example.springboot.repo;
 
 import com.example.springboot.entity.Course;
 import com.example.springboot.entity.Review;
+import com.example.springboot.entity.ReviewRating;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,8 +62,8 @@ public class CourseRepository {
         Course course = findById(10003L);
         logger.info("course.getReviews() -> {}", course.getReviews());
         //add 2 reviews to it
-        Review review1 = new Review("5", "Great Hands-on Stuff");
-        Review review2 = new Review("5", "Hatsoff");
+        Review review1 = new Review("Great Hands-on Stuff", ReviewRating.FIVE);
+        Review review2 = new Review( "Hatsoff", ReviewRating.FIVE);
 
         course.addReview(review1);
         review1.setCourse(course);

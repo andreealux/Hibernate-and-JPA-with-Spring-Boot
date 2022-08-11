@@ -1,5 +1,7 @@
 package com.example.springboot.entity;
 
+import org.apache.tomcat.jni.Address;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +26,9 @@ public class Student {
     //joinColumn - STUDENT_ID
     //inversJoinColumn- COURSE_ID
     private List<Course> courses = new ArrayList<>();
+
+    @Embedded
+    private Address address;
 
     protected Student() {
     }
@@ -54,6 +59,14 @@ public class Student {
 
     public void addCourse(Course course) {
         this.courses.add(course);
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public Long getId() {

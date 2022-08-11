@@ -3,6 +3,7 @@ package com.example.springboot.repo;
 import com.example.springboot.HibernateAndJpaWithSpringBootApplication;
 import com.example.springboot.entity.Passport;
 import com.example.springboot.entity.Student;
+import org.apache.tomcat.jni.Address;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -68,5 +69,14 @@ class StudentRepositoryTest {
         logger.info("student -> {}", student);
         logger.info("courses ->{}", student.getCourses());
     }
+
+//    @Test
+//    @Transactional
+//    public void setAddressDetails(){
+//        Student student =em.find(Student.class, 10001L);
+//        student.setAddress(new Address("No 1", "Some Street", "Hyderabad"));
+//        em.flush();
+//        logger.info("student -> {}", student);
+//    }
 
 }
